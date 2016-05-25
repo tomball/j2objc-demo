@@ -1,0 +1,18 @@
+//
+//  Settings.xcconfig
+//  J2ObjcDemo_Swift
+//
+//  Created by LeoGeng on 5/25/16.
+//  Copyright © 2016 grapecity. All rights reserved.
+//
+//:configuration = Debug
+J2OBJC_HOME = /Users/leogeng/Documents/java/j2objc-1.0.2
+
+
+HEADER_SEARCH_PATHS = $(inherited) ${J2OBJC_HOME}/include ${DERIVED_FILES_DIR} ${J2OBJC_HOME}/frameworks
+FRAMEWORK_SEARCH_PATHS = "${J2OBJC_HOME}/frameworks";
+
+
+LIBRARY_SEARCH_PATHS = "${J2OBJC_HOME}/lib";
+
+OTHER_LDFLAGS = -ljre_emul
