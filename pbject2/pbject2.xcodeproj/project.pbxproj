@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		061DC5EB1CF637B6008B8477 /* People.java in Sources */ = {isa = PBXBuildFile; fileRef = 061DC5EA1CF637B6008B8477 /* People.java */; };
 		6B9EC3D11CF5FC6600A58BC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9EC3D01CF5FC6600A58BC9 /* main.m */; };
 		6B9EC3D41CF5FC6600A58BC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9EC3D31CF5FC6600A58BC9 /* AppDelegate.m */; };
 		6B9EC3D71CF5FC6600A58BC9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9EC3D61CF5FC6600A58BC9 /* ViewController.m */; };
@@ -17,7 +18,22 @@
 		6B9EC3EA1CF5FE7800A58BC9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B9EC3E91CF5FE7800A58BC9 /* Security.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		061DC5E91CF6374F008B8477 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = sourcecode.java;
+			isEditable = 1;
+			outputFiles = (
+				"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}.m",
+				"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}.h",
+			);
+			script = "if [ ! -f \"${J2OBJC_HOME}/j2objc\" ]; then echo \"J2OBJC_HOME not correctly defined in Settings.xcconfig, currently set to '${J2OBJC_HOME}'\"; exit 1; fi;\n\"${J2OBJC_HOME}/j2objc\" -d ${DERIVED_FILES_DIR} -sourcepath \"${PROJECT_DIR}/Classes\" --no-package-directories -use-arc --prefix main=DT -g ${INPUT_FILE_PATH};";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
+		061DC5EA1CF637B6008B8477 /* People.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; name = People.java; path = ../../j2ObjcDemon_SharedLib/src/main/People.java; sourceTree = "<group>"; };
 		6B9EC3CC1CF5FC6600A58BC9 /* pbject2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pbject2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B9EC3D01CF5FC6600A58BC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6B9EC3D21CF5FC6600A58BC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,6 +83,7 @@
 		6B9EC3CE1CF5FC6600A58BC9 /* pbject2 */ = {
 			isa = PBXGroup;
 			children = (
+				061DC5EA1CF637B6008B8477 /* People.java */,
 				6B9EC3D21CF5FC6600A58BC9 /* AppDelegate.h */,
 				6B9EC3D31CF5FC6600A58BC9 /* AppDelegate.m */,
 				6B9EC3D51CF5FC6600A58BC9 /* ViewController.h */,
@@ -101,6 +118,7 @@
 				6B9EC3CA1CF5FC6600A58BC9 /* Resources */,
 			);
 			buildRules = (
+				061DC5E91CF6374F008B8477 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -159,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				061DC5EB1CF637B6008B8477 /* People.java in Sources */,
 				6B9EC3D71CF5FC6600A58BC9 /* ViewController.m in Sources */,
 				6B9EC3D41CF5FC6600A58BC9 /* AppDelegate.m in Sources */,
 				6B9EC3D11CF5FC6600A58BC9 /* main.m in Sources */,
